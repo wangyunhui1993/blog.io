@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    13246
+</body>
+<script type="text/javascript">
+     /*定义一个人类*/
+      function Person(name,age)
+     {
+          this.name=name;
+          this.age=age;
+      }
+      /*定义一个学生类1*/
+      function Student1(name,age,grade,classes)
+     {
+         Person.apply(this,arguments);  //使用apply
+         this.grade=grade;
+         this.classes=classes;
+     }
+      /*定义一个学生类2*/
+      function Student2(name,age,grade,classes)
+     {
+         Person.call(this,name,age);  //使用call
+         this.grade=grade;
+         this.classes=classes;
+     }
+     //创建一个学生类1
+     var student1=new Student1("小明",21,"一年级","3班");
+       //创建一个学生类2
+     var student2=new Student2("小花",18,"二年级","5班");
+     //测试
+     console.log("学生类1"+"name:"+student1.name+"\n"+"age:"+student1.age+"\n"+"grade:"+student1.grade+"\n"+"classes:"+student1.classes);
+      //测试
+     console.log("学生类2"+"name:"+student2.name+"\n"+"age:"+student2.age+"\n"+"grade:"+student2.grade+"\n"+"classes:"+student2.classes);
+ </script>
+</html>
